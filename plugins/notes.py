@@ -47,16 +47,16 @@ class Create(ClientBoundCommand):
 
 class note(Plugin):
     localizations = {"noteDefaults": 
-                        {"searching":{"en-US": "Creating your note ..."}, 
-                         "result": {"en-US": "Here is your note:"},
-                         "nothing": {"en-US": "What should I note?"}}, 
+                        {"searching":{"de-DE": "Deine Notiz wird erstellt... ..."}, 
+                         "result": {"de-DE": "Hier ist deine Notiz:"},
+                         "nothing": {"de-DE": "Was soll ich Notieren?"}}, 
                     "failure": {
-                                "en-US": "I cannot type your note right now."
+                                "de-DE": u"Ich kann für dich leider gerade keine Notize erstellen."
                                 }
                     }
-    @register("en-US", "(.*note [a-zA-Z0-9]+)|(.*create.*note [a-zA-Z0-9]+)|(.*write.*note [a-zA-Z0-9]+)")
+    @register("de-DE", "(.*Notiere [a-zA-Z0-9]+)|(.*erstelle.*notiz [a-zA-Z0-9]+)|(.*notiere.*mir [a-zA-Z0-9]+)")
     def writeNote(self, speech, language):
-        content_raw = re.match(".*note ([a-zA-Z0-9, ]+)$", speech, re.IGNORECASE)
+        content_raw = re.match(".*Notiere ([a-zA-Z0-9, ]+)$", speech, re.IGNORECASE)
         if content_raw == None:
             view_initial = AddViews(self.refId, dialogPhase="Reflection")
             view_initial.views = [AssistantUtteranceView(text=note.localizations['noteDefaults']['nothing'][language], speakableText=note.localizations['noteDefaults']['nothing'][language], dialogIdentifier="Note#failed")]

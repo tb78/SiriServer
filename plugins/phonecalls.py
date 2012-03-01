@@ -202,9 +202,9 @@ class phonecallPlugin(Plugin):
             lst.items.append(item)
         return root
     
-    @register("de-DE", "ruf. (?P<name>[\w ]+).*(?P<type>arbeit|zuhause|privat|mobil|handy.*|iPhone.*|pager)? an")
+    @register("de-DE", "ruf (?P<name>[\w ]+).*(?P<type>arbeit|zuhause|privat|mobil|handy.*|iPhone.*|pager)? an")
     @register("en-US", "(make a )?call (to )?(?P<name>[\w ]+).*(?P<type>work|home|mobile|main|iPhone|pager)?")
-    def makeCall(self, speech, language, regex):
+    def make_Call(self, speech, language, regex):
         personToCall = regex.group('name')
         numberType = str.lower(regex.group('type')) if type in regex.groupdict() else None
         numberType = self.getNumberTypeForName(numberType, language)

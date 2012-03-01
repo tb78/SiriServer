@@ -1,6 +1,6 @@
 #!/bin/bash
 OLD="en-US"
-NEW="en-GB"
+NEW="pl-PL"
 DPATH="./*.py"
 BPATH="./bak"
 TFILE="/tmp/out.tmp.$$"
