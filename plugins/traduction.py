@@ -17,7 +17,7 @@ class Translation(Plugin):
     res = {
         'translate': {
             'en-US': u"(Translate)(.*) in (.*)",
-            'de-DE': u"(Übersetzer)(.*) in (.*)",
+            'de-DE': u"(Übersetze)(.*) in (.*)",
         },
         'not_found': {
             'en-US': u"I don't know this language.",
