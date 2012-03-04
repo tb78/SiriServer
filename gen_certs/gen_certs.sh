@@ -28,12 +28,12 @@ cd $script_dir
 
 # Feel free to change any of these defaults
 commonName="SiriServer"
-countryName="US"
-stateOrProvinceName="Missouri"
-localityName=""
-organizationName="Siri Server"
-organizationalUnitName=""
-emailAddress=""
+countryName="DE"
+stateOrProvinceName="NRW"
+localityName="Holzwickede"
+organizationName="Siri4google"
+organizationalUnitName="The Server"
+emailAddress="nospam@schatzpiraten.de"
 
 #You probably don't need to modify these unless you know what you're doing.
 SIRI_PROXY_SETTINGS=$script_dir_back
